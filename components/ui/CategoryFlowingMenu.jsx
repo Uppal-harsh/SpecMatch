@@ -9,19 +9,19 @@ const categories = [
   { 
     id: "smartphone", 
     title: "Smartphones", 
-    image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=1000&auto=format&fit=crop", 
+    image: "/banners/phone.png", 
     href: "/wizard/smartphone" 
   },
   { 
     id: "laptop", 
     title: "Laptops", 
-    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1000&auto=format&fit=crop", 
+    image: "/banners/laptop.png", 
     href: "/wizard/laptop" 
   },
   { 
     id: "pc-builder", 
     title: "PC Builder", 
-    image: "https://images.unsplash.com/photo-1587831990711-23ca6441447b?q=80&w=1000&auto=format&fit=crop", 
+    image: "/banners/pc.png", 
     href: "/wizard/pc-builder" 
   },
 ];
@@ -75,8 +75,8 @@ export default function CategoryFlowingMenu() {
                 }}
               >
                 <div className="flex flex-col">
-                  <span className="text-accent text-xs font-mono tracking-widest uppercase mb-1 drop-shadow-md opacity-0 group-hover:opacity-100 transition-opacity">Select Category</span>
-                  <h3 className="text-3xl md:text-4xl font-display font-bold text-text drop-shadow-2xl">{cat.title}</h3>
+                  <span className="text-accent text-xs font-mono tracking-widest uppercase mb-1  opacity-0 group-hover:opacity-100 transition-opacity">Select Category</span>
+                  <h3 className="text-3xl md:text-4xl font-display font-bold text-text ">{cat.title}</h3>
                 </div>
                 
                 <motion.div 

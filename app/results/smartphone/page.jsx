@@ -68,7 +68,7 @@ export default function SmartphoneResults() {
           initial={{ opacity: 0, scale: 0.95, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
-          className="w-full bg-card/90 backdrop-blur-2xl border border-accent/30 rounded-3xl p-6 shadow-[0_0_50px_-15px_var(--accent)] relative overflow-hidden flex flex-col"
+          className="w-full bg-card/90 backdrop-blur-2xl border border-accent/30 rounded-3xl p-6 shadow-md relative overflow-hidden flex flex-col"
         >
           {/* Badge */}
           <div className="absolute top-0 left-0 bg-accent text-background font-display font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-br-2xl shadow-md z-20">

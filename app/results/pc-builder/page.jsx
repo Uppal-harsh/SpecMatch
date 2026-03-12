@@ -89,7 +89,7 @@ export default function PCBuilderResults() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="w-full bg-card/90 backdrop-blur-2xl border border-accent/30 rounded-3xl overflow-hidden shadow-[0_0_50px_-15px_var(--accent)] relative flex flex-col"
+          className="w-full bg-card/90 backdrop-blur-2xl border border-accent/30 rounded-3xl overflow-hidden shadow-md relative flex flex-col"
         >
           {/* Header */}
           <div className="p-6 md:p-8 border-b border-border/50 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 relative z-10">

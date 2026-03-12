@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0a0b0f;
-  --card: #12151e;
-  --border: #1e2330;
-  --accent: #e8f04a; /* electric yellow-green — primary CTA */
-  --accent2: #5af0b4; /* mint — match scores, positive */
-  --accent3: #f05a78; /* coral — alerts, price drops */
-  --text: #f0f2f8;
-  --muted: #8891a8;
+  --bg: #09090b; /* Very dark background (Zinc 950) */
+  --card: #18181b; /* Dark card (Zinc 900) */
+  --border: #27272a; /* Border (Zinc 800) */
+  --accent: #fafafa; /* Bright white/gray for CTA (Zinc 50) */
+  --accent2: #10b981; /* Green */
+  --accent3: #ef4444; /* Red */
+  --text: #ffffff; /* Pure white text */
+  --muted: #a1a1aa; /* Gray text (Zinc 400) */
 }
 
 body {

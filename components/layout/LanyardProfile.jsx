@@ -32,8 +32,8 @@ export default function LanyardProfile() {
         <Link href="/profile" className="flex flex-col items-center group pb-4">
           {/* Lanyard Straps */}
           <div className="flex gap-1.5 -top-4 relative">
-            <div className="w-1 h-20 bg-gradient-to-b from-accent/20 to-accent shadow-[0_0_10px_var(--accent)]" />
-            <div className="w-1 h-20 bg-gradient-to-b from-accent/20 to-accent shadow-[0_0_10px_var(--accent)]" />
+            <div className="w-1 h-20 bg-gradient-to-b from-accent/20 to-accent shadow-md" />
+            <div className="w-1 h-20 bg-gradient-to-b from-accent/20 to-accent shadow-md" />
           </div>
           
           {/* Badge Clip (Metal part) */}
@@ -42,7 +42,7 @@ export default function LanyardProfile() {
           </div>
           
           {/* ID Badge Card */}
-          <div className="mt-[-2px] bg-card/90 backdrop-blur-xl border border-border shadow-2xl rounded-xl p-3 w-[100px] flex flex-col items-center gap-3 transition-colors group-hover:border-accent group-hover:shadow-[0_0_25px_-5px_var(--accent)] relative overflow-hidden">
+          <div className="mt-[-2px] bg-card/90 backdrop-blur-xl border border-border shadow-2xl rounded-xl p-3 w-[100px] flex flex-col items-center gap-3 transition-colors group-hover:border-accent group-hover:shadow-md relative overflow-hidden">
             {/* Hologram aesthetic reflection */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             

@@ -20,15 +20,23 @@ export default function Home() {
       
       {/* Hero Content */}
       <div className="flex flex-col items-center text-center max-w-4xl w-full z-10">
-        <RotatingText 
-          phrases={[
-            "Find your perfect Phone",
-            "Find your perfect Laptop",
-            "Find your perfect PC Build"
-          ]} 
-        />
+        <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 font-display text-4xl md:text-5xl lg:text-5xl font-extrabold text-text tracking-tighter leading-none mb-6">
+          <span>Find your perfect</span>
+          <RotatingText
+            texts={['Phone', 'Laptop', 'PC Build']}
+            mainClassName="px-3 sm:px-4 md:px-5 bg-accent text-background overflow-hidden py-1 sm:py-2 md:py-3 justify-center rounded-xl font-bold"
+            staggerFrom="last"
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-120%" }}
+            staggerDuration={0.025}
+            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+            rotationInterval={3000}
+          />
+        </div>
         
-        <div className="h-8 md:h-8" />
+        <div className="h-4 md:h-4" />
         
         <motion.h1 
           className="font-display text-5xl md:text-[80px] font-extrabold text-text tracking-tighter leading-none"
@@ -62,7 +70,7 @@ export default function Home() {
         >
           <button 
             onClick={handleStartMatching}
-            className="px-8 py-4 rounded-xl bg-accent text-background font-display font-semibold text-lg hover:bg-accent/90 transition-all shadow-[0_0_30px_-5px_var(--accent)] hover:shadow-[0_0_40px_0px_var(--accent)] whitespace-nowrap"
+            className="px-8 py-4 rounded-xl bg-accent text-background font-display font-semibold text-lg hover:bg-accent/90 transition-all shadow-md hover:shadow-md whitespace-nowrap"
           >
             Find My Device →
           </button>

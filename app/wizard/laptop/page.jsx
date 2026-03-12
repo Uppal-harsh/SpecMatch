@@ -56,11 +56,10 @@ export default function LaptopWizard() {
   const OptionTag = ({ option, selected, onClick, multi = false }) => (
     <button
       onClick={onClick}
-      className={`px-5 py-3 rounded-xl border font-body text-sm font-medium transition-all duration-300 text-left ${
-        selected 
-          ? "bg-accent/20 border-accent text-accent shadow-[0_0_15px_-3px_var(--accent)]" 
+      className={`px-5 py-3 rounded-xl border font-body text-sm font-medium transition-all duration-300 text-left ${selected
+          ? "bg-accent/20 border-accent text-accent shadow-md"
           : "bg-card border-border text-muted hover:border-accent/50 hover:text-text"
-      }`}
+        }`}
     >
       {option}
     </button>
@@ -70,12 +69,14 @@ export default function LaptopWizard() {
     return (
       <div className="fixed inset-0 z-[100] bg-background flex flex-col items-center justify-center overflow-hidden">
         <div className="relative w-40 h-40 flex items-center justify-center mb-12">
-           <motion.div className="absolute inset-0 rounded-full border-2 border-accent/20" animate={{ scale: [1, 2.5], opacity: [1, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }} />
-           <motion.div className="absolute inset-0 rounded-full border-2 border-accent/40" animate={{ scale: [1, 2], opacity: [1, 0] }} transition={{ duration: 2, delay: 0.5, repeat: Infinity, ease: "easeOut" }} />
-           <div className="w-12 h-12 bg-accent rounded-full shadow-[0_0_40px_10px_var(--accent)]" />
+          <motion.div className="absolute inset-0 rounded-full border-2 border-accent/20" animate={{ scale: [1, 2.5], opacity: [1, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }} />
+          <motion.div className="absolute inset-0 rounded-full border-2 border-accent/40" animate={{ scale: [1, 2], opacity: [1, 0] }} transition={{ duration: 2, delay: 0.5, repeat: Infinity, ease: "easeOut" }} />
+          <div className="w-12 h-12 bg-accent rounded-full shadow-md flex items-center justify-center text-card">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+          </div>
         </div>
         <AnimatePresence mode="wait">
-          <motion.p key={loadText} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="font-mono text-sm text-muted tracking-widest uppercase">
+          <motion.p key={loadText} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="font-mono text-sm text-text font-bold tracking-widest uppercase mt-4">
             {loadText}
           </motion.p>
         </AnimatePresence>
@@ -86,7 +87,7 @@ export default function LaptopWizard() {
   return (
     <div className="w-full min-h-screen flex flex-col items-center justify-center px-4 pt-20 pb-24 z-10 relative">
       <div className="w-full max-w-2xl bg-card/80 backdrop-blur-xl border border-border rounded-3xl p-6 md:p-10 shadow-2xl">
-        
+
         {currentStep > 0 && <Stepper steps={8} currentStep={currentStep - 1} />}
 
         <AnimatePresence mode="wait">
@@ -96,7 +97,7 @@ export default function LaptopWizard() {
                 <h2 className="font-display text-2xl font-bold text-text mb-2">Laptop Preferences</h2>
                 <p className="font-body text-muted">Select required features and brands.</p>
               </div>
-              
+
               <div className="flex flex-wrap gap-3">
                 {FILTERS.map(f => (
                   <OptionTag key={f} option={f} selected={filters.includes(f)} multi onClick={() => {
@@ -117,8 +118,8 @@ export default function LaptopWizard() {
               </div>
 
               <div className="mt-8 flex justify-end">
-                <button 
-                  onClick={handleNext} 
+                <button
+                  onClick={handleNext}
                   className="px-8 py-3 rounded-xl font-display font-bold flex items-center gap-2 transition-all bg-accent text-background hover:bg-accent/90"
                 >
                   Continue <ArrowRight size={18} />
@@ -147,10 +148,10 @@ export default function LaptopWizard() {
           {currentStep === 2 && (
             <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="flex flex-col gap-8 w-full">
               <h2 className="font-display text-3xl font-bold text-text text-center mb-4">What&apos;s your budget?</h2>
-              <ElasticSlider 
-                min={20000} max={500000} step={5000} 
-                value={wizardAnswers[2] || [50000, 150000]} 
-                onChange={(val) => setAnswer(2, val)} 
+              <ElasticSlider
+                min={20000} max={500000} step={5000}
+                value={wizardAnswers[2] || [50000, 150000]}
+                onChange={(val) => setAnswer(2, val)}
               />
             </motion.div>
           )}
@@ -191,7 +192,7 @@ export default function LaptopWizard() {
           {currentStep === 6 && (
             <motion.div key="step6" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="flex flex-col gap-6">
               <h2 className="font-display text-3xl font-bold text-text text-center mb-2">What display do you prefer?</h2>
-              
+
               <h3 className="font-body text-muted text-sm uppercase tracking-widest mt-2">Size</h3>
               <div className="flex flex-col gap-3 mb-2">
                 {DISPLAY_SIZE.map(s => (
@@ -221,8 +222,8 @@ export default function LaptopWizard() {
 
           {currentStep === 8 && (
             <motion.div key="step8" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="flex flex-col gap-6">
-               <h2 className="font-display text-3xl font-bold text-text text-center mb-4">Operating System preference?</h2>
-               <div className="flex flex-col gap-3">
+              <h2 className="font-display text-3xl font-bold text-text text-center mb-4">Operating System preference?</h2>
+              <div className="flex flex-col gap-3">
                 {OS.map(o => (
                   <OptionTag key={o} option={o} selected={wizardAnswers[8] === o} onClick={() => setAnswer(8, o)} />
                 ))}
@@ -237,9 +238,9 @@ export default function LaptopWizard() {
             <button onClick={handlePrev} className="text-muted hover:text-text font-body text-sm flex items-center gap-1 transition-colors">
               <ArrowLeft size={16} /> Back
             </button>
-            
+
             {currentStep < 8 ? (
-              <button 
+              <button
                 onClick={handleNext}
                 disabled={!wizardAnswers[currentStep] && (!wizardAnswers["6_size"] || !wizardAnswers["6_tech"])}
                 className="px-6 py-2.5 rounded-xl bg-text text-background font-body font-bold hover:bg-muted transition-all disabled:opacity-50 disabled:cursor-not-allowed"
@@ -247,10 +248,10 @@ export default function LaptopWizard() {
                 Next Step
               </button>
             ) : (
-              <button 
+              <button
                 onClick={submitWizard}
                 disabled={!wizardAnswers[8]}
-                className="px-8 py-3 rounded-xl bg-accent text-background font-display font-bold hover:bg-accent/90 transition-all shadow-[0_0_20px_-5px_var(--accent)] disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-8 py-3 rounded-xl bg-accent text-background font-display font-bold hover:bg-accent/90 transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Find My Laptop →
               </button>

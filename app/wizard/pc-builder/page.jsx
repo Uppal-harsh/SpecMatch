@@ -67,7 +67,7 @@ export default function PCBuilderWizard() {
       onClick={onClick}
       className={`px-4 py-2.5 rounded-xl border font-body text-sm font-medium transition-all duration-300 text-left ${
         selected 
-          ? "bg-accent/20 border-accent text-accent shadow-[0_0_15px_-3px_var(--accent)]" 
+          ? "bg-accent/20 border-accent text-accent shadow-md" 
           : "bg-card border-border text-muted hover:border-accent/50 hover:text-text"
       }`}
     >
@@ -81,12 +81,12 @@ export default function PCBuilderWizard() {
         <div className="relative w-40 h-40 flex items-center justify-center mb-12">
            <motion.div className="absolute inset-0 rounded-full border-2 border-accent/20" animate={{ scale: [1, 2.5], opacity: [1, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }} />
            <motion.div className="absolute inset-0 rounded-full border-2 border-accent/40" animate={{ scale: [1, 2], opacity: [1, 0] }} transition={{ duration: 2, delay: 0.5, repeat: Infinity, ease: "easeOut" }} />
-           <div className="w-12 h-12 bg-accent rounded-full shadow-[0_0_40px_10px_var(--accent)] flex items-center justify-center">
-             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+           <div className="w-12 h-12 bg-accent rounded-full shadow-md flex items-center justify-center text-card">
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
            </div>
         </div>
         <AnimatePresence mode="wait">
-          <motion.p key={loadText} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="font-mono text-sm text-muted tracking-widest uppercase">
+          <motion.p key={loadText} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="font-mono text-sm text-text font-bold tracking-widest uppercase mt-4">
             {loadText}
           </motion.p>
         </AnimatePresence>
@@ -343,7 +343,7 @@ export default function PCBuilderWizard() {
               <button 
                 onClick={submitWizard}
                 disabled={!isStepValid()}
-                className="px-8 py-3 rounded-xl bg-accent text-background font-display font-bold hover:bg-accent/90 transition-all shadow-[0_0_20px_-5px_var(--accent)] disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-8 py-3 rounded-xl bg-accent text-background font-display font-bold hover:bg-accent/90 transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Build My PC →
               </button>

@@ -57,7 +57,7 @@ export default function SmartphoneWizard() {
       onClick={onClick}
       className={`px-5 py-3 rounded-xl border font-body text-sm font-medium transition-all duration-300 text-left ${
         selected 
-          ? "bg-accent/20 border-accent text-accent shadow-[0_0_15px_-3px_var(--accent)]" 
+          ? "bg-accent/20 border-accent text-accent shadow-md" 
           : "bg-card border-border text-muted hover:border-accent/50 hover:text-text"
       }`}
     >
@@ -81,7 +81,7 @@ export default function SmartphoneWizard() {
              animate={{ scale: [1, 2], opacity: [1, 0] }}
              transition={{ duration: 2, delay: 0.5, repeat: Infinity, ease: "easeOut" }}
            />
-           <div className="w-12 h-12 bg-accent rounded-full shadow-[0_0_40px_10px_var(--accent)]" />
+           <div className="w-12 h-12 bg-accent rounded-full shadow-md" />
         </div>
         
         <AnimatePresence mode="wait">
@@ -90,7 +90,7 @@ export default function SmartphoneWizard() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="font-mono text-sm text-muted tracking-widest uppercase"
+            className="font-mono text-sm text-text font-bold tracking-widest uppercase mt-4"
           >
             {loadText}
           </motion.p>
@@ -277,7 +277,7 @@ export default function SmartphoneWizard() {
             ) : (
               <button 
                 onClick={submitWizard}
-                className="px-8 py-3 rounded-xl bg-accent text-background font-display font-bold hover:bg-accent/90 transition-all shadow-[0_0_20px_-5px_var(--accent)]"
+                className="px-8 py-3 rounded-xl bg-accent text-background font-display font-bold hover:bg-accent/90 transition-all shadow-md"
               >
                 Find My Phone →
               </button>

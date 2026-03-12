@@ -1,46 +1,21 @@
 "use client";
-import { motion } from "framer-motion";
+import Waves from "@/components/ui/Waves";
 
 export default function PageBackground() {
   return (
-    <div className="fixed inset-0 z-0 overflow-hidden bg-[#0a0b0f] pointer-events-none">
-      {/* Animated gradient orbs */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-          x: ["-10%", "10%", "-10%"],
-          y: ["-10%", "10%", "-10%"],
-        }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] rounded-full blur-[120px]"
-        style={{
-          background: "radial-gradient(circle, #231a2d 0%, transparent 70%)",
-        }}
-      />
-      <motion.div
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.2, 0.4, 0.2],
-          x: ["10%", "-10%", "10%"],
-          y: ["10%", "-10%", "10%"],
-        }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-[-20%] right-[-10%] w-[80vw] h-[80vw] rounded-full blur-[150px]"
-        style={{
-          background: "radial-gradient(circle, #2a1c63 0%, transparent 70%)",
-        }}
-      />
-       <motion.div
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.1, 0.3, 0.1],
-        }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[20%] right-[20%] w-[50vw] h-[50vw] rounded-full blur-[100px]"
-        style={{
-          background: "radial-gradient(circle, #10072c 0%, transparent 70%)",
-        }}
+    <div className="fixed inset-0 z-0 overflow-hidden bg-[var(--bg)] pointer-events-none">
+      <Waves
+        lineColor="rgba(255, 255, 255, 0.15)"
+        backgroundColor="transparent"
+        waveSpeedX={0.01}
+        waveSpeedY={0.01}
+        waveAmpX={40}
+        waveAmpY={20}
+        friction={0.9}
+        tension={0.01}
+        maxCursorMove={120}
+        xGap={12}
+        yGap={36}
       />
       
       {/* Grain overlay */}

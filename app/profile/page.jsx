@@ -114,7 +114,7 @@ export default function ProfilePage() {
         <div className="flex flex-col gap-3 relative z-10 mt-auto">
           <button
             onClick={handleShareProfile}
-            className="w-full py-3.5 rounded-xl bg-accent text-background font-display font-bold hover:bg-accent/90 transition-colors flex items-center justify-center gap-2 shadow-[0_0_20px_-5px_var(--accent)] hover:shadow-[0_0_25px_0px_var(--accent)]"
+            className="w-full py-3.5 rounded-xl bg-accent text-background font-display font-bold hover:bg-accent/90 transition-colors flex items-center justify-center gap-2 shadow-md hover:shadow-md"
           >
             {copiedLink ? <Check size={18} /> : <Copy size={18} />}
             {copiedLink ? "Link Copied!" : "Share My Profile"}
