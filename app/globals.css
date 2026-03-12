@@ -3,25 +3,62 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg: #0a0b0f;
+  --card: #12151e;
+  --border: #1e2330;
+  --accent: #e8f04a; /* electric yellow-green — primary CTA */
+  --accent2: #5af0b4; /* mint — match scores, positive */
+  --accent3: #f05a78; /* coral — alerts, price drops */
+  --text: #f0f2f8;
+  --muted: #8891a8;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-instrument-sans), sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+* {
+  box-sizing: border-box;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Dual Range Slider Styles */
+.dual-slider {
+  appearance: none;
+  background: transparent;
+  pointer-events: none;
+}
+.dual-slider::-webkit-slider-thumb {
+  appearance: none;
+  pointer-events: auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: grab;
+}
+.dual-slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+}
+.thumb-transition {
+  transition: left 0.1s ease-out;
 }
