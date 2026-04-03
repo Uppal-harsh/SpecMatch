@@ -106,7 +106,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center">
           <div className="text-4xl md:text-5xl text-accent2 font-bold mb-2">
-            <CountUp to={4} duration={1.5} />
+            <CountUp to={3} duration={1.5} />
           </div>
           <span className="font-body text-muted uppercase tracking-wider text-sm">Device Categories</span>
         </div>
