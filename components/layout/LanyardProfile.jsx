@@ -30,15 +30,16 @@ export default function LanyardProfile() {
         }}
       >
         <Link href="/profile" className="flex flex-col items-center group pb-4">
-          {/* Lanyard Straps */}
-          <div className="flex gap-1.5 -top-4 relative">
-            <div className="w-1 h-20 bg-gradient-to-b from-accent/20 to-accent shadow-md" />
-            <div className="w-1 h-20 bg-gradient-to-b from-accent/20 to-accent shadow-md" />
+          {/* Lanyard Strap / String */}
+          <div className="flex gap-2 w-full justify-center h-16 pointer-events-none">
+            {/* The string extending up out of the viewport */}
+            <div className="w-1.5 h-24 bg-accent -mt-8 rounded-b-sm shadow-sm" />
+            <div className="w-1.5 h-24 bg-accent -mt-8 rounded-b-sm shadow-sm" />
           </div>
           
           {/* Badge Clip (Metal part) */}
-          <div className="w-6 h-3 bg-muted border border-border/50 rounded-sm -mt-1 z-10 flex items-center justify-center shadow-md">
-            <div className="w-2.5 h-1 bg-background/80 rounded-full" />
+          <div className="w-8 h-4 bg-muted border border-border/80 rounded-sm -mt-1 z-10 flex items-center justify-center shadow-md">
+            <div className="w-4 h-1 bg-background/50 rounded-full" />
           </div>
           
           {/* ID Badge Card */}
